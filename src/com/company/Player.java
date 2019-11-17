@@ -6,4 +6,8 @@ public final class Player {
     public static void setActivePlayer(String newActivePlayer) {
         activePlayer = newActivePlayer;
     }
+
+    public static String getActivePlayer() {
+        return activePlayer;
+    }
 }

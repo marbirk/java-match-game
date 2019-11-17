@@ -14,7 +14,7 @@ public final class Game {
         Introduction.show();
 
         while (true) {
-            switch (Player.activePlayer) {
+            switch (Player.getActivePlayer()) {
                 case "computer":
                     displayMatchCount();
                     displayComputerActionIntroduction();
@@ -70,7 +70,7 @@ public final class Game {
     }
 
     private static void displayUserActionIntroduction() {
-        Text.displayInLine("It's your turn, " + User.userName + "! You can draw 1-3 matches from the table.");
+        Text.displayInLine("It's your turn, " + User.getUserName() + "! You can draw 1-3 matches from the table.");
         Text.displayInLine("Please select 1, 2 or 3!");
     }
 

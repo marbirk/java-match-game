@@ -34,7 +34,7 @@ public final class Introduction {
     }
 
     private static void welcomeMessage() {
-        Text.displayInLine("Welcome " + User.userName + "! Nice to meet you :)");
+        Text.displayInLine("Welcome " + User.getUserName() + "! Nice to meet you :)");
         Text.displayReturn();
     }
 }

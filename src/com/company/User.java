@@ -1,7 +1,7 @@
 package com.company;
 
 public final class User {
-    public static String userName = "player1";
+    public static String userName = "player";
 
     public static void setUserName(String name) {
         userName = name;

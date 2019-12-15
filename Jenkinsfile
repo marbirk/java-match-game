@@ -15,7 +15,8 @@ node {
         ])
     }
     stage("Build") {
-        sh "ant -d build"
+        def antHome = tool name: 'ant1', type: 'ant'
+        sh "${antHome}/bin ant -d build"
     }
     stage("Cleanup") {
         cleanWs()

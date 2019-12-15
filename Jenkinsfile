@@ -25,7 +25,7 @@ node {
         writeFile file: "output/newFile.txt", text: "Hier steht ein wichtiger Text!"
         sh "ls"
         sh "cd output"
-        sh "cat newFile.tsx"
+        sh "cat newFile.txt"
     }
     stage("Cleanup") {
         cleanWs()

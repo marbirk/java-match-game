@@ -15,8 +15,8 @@ node {
         ])
     }
     stage("Build") {
-        def antHome = tool name: 'ant1', type: 'ant'
-        sh "${antHome}/bin ant -d build"
+        def mvnHome = tool name: 'maven3', type: 'maven'
+        sh "${mvnHome}/bin mvn clean package"
     }
     stage("Cleanup") {
         cleanWs()

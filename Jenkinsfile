@@ -14,10 +14,10 @@ node {
                 userRemoteConfigs: [[url: 'https://github.com/marbirk/java-match-game']]
         ])
     }
-    /*stage("Build") {
+    stage("Build") {
         def mvnHome = tool name: 'maven3', type: 'maven'
         sh "${mvnHome}/bin mvn clean package"
-    }*/
+    }
     stage("Create new folder") {
         sh "mkdir -p output"
     }

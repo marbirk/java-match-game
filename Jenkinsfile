@@ -14,6 +14,9 @@ node {
                 userRemoteConfigs: [[url: 'https://github.com/marbirk/java-match-game']]
         ])
     }
+    stage("Build") {
+        sh "ant -d build"
+    }
     stage("Cleanup") {
         cleanWs()
     }

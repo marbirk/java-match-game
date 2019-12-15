@@ -15,10 +15,8 @@ node {
         ])
     }
     stage("Build") {
-        def mvn_version = 'M3'
-        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-            sh "mvn package"
-        }
+        def mvn_home = tool name: 'maven3', type: 'maven'
+        sh "${mvn_home}/bin mvn package"
     }
     stage("Cleanup") {
         cleanWs()

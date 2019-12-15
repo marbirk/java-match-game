@@ -1,10 +1,6 @@
 #!groovy
 
 node {
-    stage("Check versions") {
-        sh "mvn --version"
-        sh "java --version"
-    }
     stage("Cleanup") {
         cleanWs()
     }

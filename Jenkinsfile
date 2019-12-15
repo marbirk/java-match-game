@@ -2,7 +2,6 @@
 
 node {
     stage("Check versions") {
-        sh "node --version"
         sh "mvn --version"
         sh "java --version"
     }

@@ -16,7 +16,7 @@ node {
     }
     stage("Build") {
         def mvnHome = tool name: 'maven3', type: 'maven'
-        sh "${mvnHome}/bin mvn clean package"
+        sh "${mvnHome}/bin/mvn clean package"
     }
     stage("Create new folder") {
         sh "mkdir -p output"

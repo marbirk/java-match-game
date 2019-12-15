@@ -1,13 +1,23 @@
 #!groovy
 
 node {
-    stage("Stage 1") {
-        sh "echo Hallo Test Stage"
+    stage("Clean Up") {
+        cleanWs()
     }
-    stage("Stage 2") {
-        sh "echo Hallo Test Stage"
+    stage("Checkout") {
+        checkout([
+                $class: 'GitSCM', 
+                branches: [[name: '*/master']], 
+                doGenerateSubmoduleConfigurations: false, 
+                extensions: [], 
+                submoduleCfg: [], 
+                userRemoteConfigs: [[url: 'https://github.com/marbirk/java-match-game']]
+        ])
     }
-    stage("Stage 3") {
-        sh "echo Hallo Test Stage"
+    stage("Build") {
+        sh "mvn package"
+    }
+    stage("Clean Up") {
+        cleanWs()
     }
 }

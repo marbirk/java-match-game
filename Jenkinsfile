@@ -1,7 +1,7 @@
 #!groovy
 
 node {
-    stage("Clean Up") {
+    stage("Cleanup") {
         cleanWs()
     }
     stage("Checkout") {
@@ -15,10 +15,12 @@ node {
         ])
     }
     stage("Build") {
-        def mvnHome = tool name: '', type: 'maven'
-        sh "${mvnHome}/bin/mvn package"
+        def mvn_version = 'M3'
+        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+            sh "mvn package"
+        }
     }
-    stage("Clean Up") {
+    stage("Cleanup") {
         cleanWs()
     }
 }
